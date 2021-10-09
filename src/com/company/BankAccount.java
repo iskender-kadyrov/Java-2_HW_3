@@ -17,7 +17,7 @@ public class BankAccount {
 //    }
 
     public void withdraw(int sum) throws LimitException {
-        if (amount- sum <0) {
+        if (amount < sum) {
             LimitException ex = new LimitException("Requested amount is more than remaining funds. Available funds: "+ amount, getAmount());
 //            amount -= ex.getRemainingAmount();
             // amount = amount - getRemainingAmount;

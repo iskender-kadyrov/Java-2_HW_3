@@ -11,6 +11,7 @@ public class Main {
         BankAccount bankAccount = new BankAccount();
         bankAccount.deposit(20000);
         System.out.println(bankAccount.getAmount());
+        String withdrawRemainingAmount;
         int remainingAmount;
 
         while (true) {
@@ -23,6 +24,17 @@ public class Main {
             } catch (LimitException limitException) {
                 System.out.println(limitException.getMessage());
                 System.out.println("You may withdraw only: " + bankAccount.getAmount());
+
+//                System.out.println("Would you like to withdraw the remaining amount?");
+//                // boolean withdraw = false;
+                System.out.println("You withdrew remaining amount: " + bankAccount.getAmount());
+                bankAccount.withdraw((int) bankAccount.getAmount());
+                System.out.println("Your balance: " + bankAccount.getAmount());
+//                if (withdraw == true){
+//                    bankAccount.withdraw((int) bankAccount.getAmount());
+//                    System.out.println("Remaining balance: " + bankAccount.getAmount());
+//                }
+
                 break;
             }
 //            if (scanner.nextLine() == "y") {
