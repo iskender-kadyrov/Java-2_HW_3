@@ -7,7 +7,7 @@ public class Main {
 
         BankAccount bankAccount = new BankAccount();
         bankAccount.deposit(20000);
-        System.out.println(bankAccount.getAmount());
+        System.out.println("You have deposited " + bankAccount.getAmount());
 
         while (true) {
             try {
@@ -17,7 +17,6 @@ public class Main {
 
             } catch (LimitException limitException) {
                 System.out.println(limitException.getMessage());
-                System.out.println("You may withdraw only: " + bankAccount.getAmount());
                 System.out.println("You withdrew remaining amount: " + bankAccount.getAmount());
                 bankAccount.withdraw((int) bankAccount.getAmount());
                 System.out.println("Your balance is: " + bankAccount.getAmount());
